@@ -1,6 +1,7 @@
-variable "aws_region" {
+variable "AWS_DEFAULT_REGION" {
   description = "The AWS region things are created in"
   # default     = "us-east-2"
+  default     = ""
 }
 
 variable "vApp" {
