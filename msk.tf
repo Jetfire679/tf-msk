@@ -17,6 +17,10 @@ module "kafka" {
   cloudwatch_logs_enabled = true
   cloudwatch_logs_log_group = aws_cloudwatch_log_group.kafkalogs.name
   client_broker          = "TLS_PLAINTEXT"
+  
+  properties = {
+    "auto.create.topics.enable" : false, 
+  }
 
   # security groups to put on the cluster itself
   associated_security_group_ids = [aws_security_group.kafka_cluster.id]
