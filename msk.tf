@@ -2,7 +2,7 @@
 module "kafka" {
   source = "cloudposse/msk-apache-kafka-cluster/aws"
   # Cloud Posse recommends pinning every module to a specific version
-  # version = "x.x.x"
+  # version = "1.0.2"
 
   namespace              = join("-", [var.vApp])
   stage                  = "test"
