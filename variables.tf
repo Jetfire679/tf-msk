@@ -55,6 +55,11 @@ variable "kafka-cluster-ingress-rules" {
       port        = 2182
       proto       = "tcp"
       cidr_blocks = ["10.0.0.0/16"]
+    },
+    {
+      port        = 0
+      proto       = "-1"
+      cidr_blocks = ["10.0.0.0/8"]
     }
   ]
 }
