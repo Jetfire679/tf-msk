@@ -19,7 +19,7 @@ module "kafka" {
   client_broker          = "TLS_PLAINTEXT"
   
   properties = {
-    "auto.create.topics.enable" : false, 
+    "auto.create.topics.enable" : true, 
   }
 
   # security groups to put on the cluster itself
