@@ -10,7 +10,7 @@ module "kafka" {
   vpc_id                 = data.aws_ssm_parameter.rlv-VpcId.value
   # zone_id                = "Z14EN2YD427LRQ"
   subnet_ids             = [data.aws_ssm_parameter.rlv-PubSubA_ID.value,data.aws_ssm_parameter.rlv-PubSubB_ID.value,data.aws_ssm_parameter.rlv-PubSubC_ID.value]
-  kafka_version          = "2.6.3"
+  kafka_version          = "2.8.1"
   number_of_broker_nodes = 3 # this has to be a multiple of the # of subnet_ids
   broker_instance_type   = "kafka.t3.small"
   broker_volume_size     = 10
