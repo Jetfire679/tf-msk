@@ -121,7 +121,7 @@ variable "egress-rules" {
 
 variable "base_domain"{
   type = string
-  default = "test.vignali.rock"
+  default = "test.vignali.rocks"
 }
 
 variable "environment"{
