@@ -9,6 +9,11 @@ variable "vApp" {
   default = "kafka"
 }
 
+variable "vHostedZone" {
+  type    = string
+  default = "Z05471843RNAQFU8FZXA"
+}
+
 variable "kafka-cluster-ingress-rules" {
   type = list(object({
     port        = number
