@@ -1,3 +1,8 @@
+
+data "aws_route53_zone" "main" {
+    name = var.base_domain
+}
+
 locals {
   transformed = [ for val in split(",", module.kafka.bootstrap_brokers): split(":", val)[0] ]
 }
@@ -32,8 +37,9 @@ output "kafka_addrs3" {
 }
 
 resource "aws_route53_record" "www" {
-  zone_id = var.vHostedZone
-  name    = "kafka.test.vignali.rocks"
+#   zone_id = var.vHostedZone
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = join(".",[var.environment,var.base_domain])
   type    = "A"
   ttl     = "300"
   records = [data.dns_a_record_set.kafka1.addrs[0],data.dns_a_record_set.kafka2.addrs[0],data.dns_a_record_set.kafka3.addrs[0]]

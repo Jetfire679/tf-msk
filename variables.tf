@@ -118,3 +118,13 @@ variable "egress-rules" {
     }
   ]
 }
+
+variable "base_domain"{
+  type = string
+  default = "test.vignalis.rocks"
+}
+
+variable "environment"{
+  type = string
+  default = "dev1"
+}
