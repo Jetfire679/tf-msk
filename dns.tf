@@ -33,7 +33,7 @@ output "kafka_addrs3" {
 
 resource "aws_route53_record" "www" {
   zone_id = var.vHostedZone
-  name    = "akafka.test.vignali.rocks"
+  name    = "kafka.test.vignali.rocks"
   type    = "A"
   ttl     = "300"
   records = [data.dns_a_record_set.kafka1.addrs[0],data.dns_a_record_set.kafka2.addrs[0],data.dns_a_record_set.kafka3.addrs[0]]
