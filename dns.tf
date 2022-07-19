@@ -38,6 +38,7 @@ output "kafka_addrs3" {
 
 resource "aws_route53_record" "www" {
 #   zone_id = var.vHostedZone
+  count = var.enable_msk_dns ? 1 : 0
   zone_id = data.aws_route53_zone.main.zone_id
   name    = join(".",[var.environment,var.base_domain])
   type    = "A"
