@@ -9,6 +9,11 @@ variable "vApp" {
   default = "kafka"
 }
 
+variable "enable_msk_dns" {
+  type = string
+  default = "enable"
+}
+
 variable "vHostedZone" {
   type    = string
   default = "Z05471843RNAQFU8FZXA"
